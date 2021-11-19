@@ -48,3 +48,29 @@ spec:
     url: gs://repository-gke-activiti-nov-3725b981b0c1
   vault: {}
   webhook: lighthouse
+  infrastructure:
+    activiti-keycloak:
+      keycloak:
+        keycloak:
+          ingress:
+            enabled: true
+            path: /
+            hosts:
+              - "activiti-keycloak.jx-staging.34.82.59.208"
+            annotations:
+              kubernetes.io/ingress.class: nginx
+              nginx.ingress.kubernetes.io/rewrite-target: /
+              nginx.ingress.kubernetes.io/configuration-snippet: |
+                add_header Access-Control-Allow-Methods "POST, GET, OPTIONS, PUT, PATCH, DELETE";
+                add_header Access-Control-Allow-Credentials true;
+                add_header Access-Control-Allow-Headers "DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Authorization";
+    activiti-cloud-gateway:
+      ingress:
+        enabled: true
+        hostName: "activiti-cloud-gateway.jx-staging.34.82.59.208"
+        annotations:
+          kubernetes.io/ingress.class: nginx
+          nginx.ingress.kubernetes.io/rewrite-target: /
+          nginx.ingress.kubernetes.io/enable-cors: true
+          nginx.ingress.kubernetes.io/cors-allow-headers: "*"
+          nginx.ingress.kubernetes.io/x-forwarded-prefix: true
