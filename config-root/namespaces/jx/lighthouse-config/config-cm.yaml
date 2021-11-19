@@ -7,6 +7,7 @@ data:
       LinkURL: null
     in_repo_config:
       enabled:
+        gke-activiti/activiti-cloud-application: true
         gke-activiti/jx3-cluster-asm: true
         gke-activiti/nodetest: true
     plank: {}
@@ -20,6 +21,7 @@ data:
         required-if-present-contexts: null
         skip-unknown-contexts: false
       merge_method:
+        gke-activiti/activiti-cloud-application: merge
         gke-activiti/jx3-cluster-asm: merge
         gke-activiti/nodetest: merge
       queries:
@@ -33,6 +35,7 @@ data:
         - needs-rebase
         repos:
         - gke-activiti/jx3-cluster-asm
+        - gke-activiti/activiti-cloud-application
         - gke-activiti/nodetest
       - labels:
         - updatebot
@@ -44,6 +47,7 @@ data:
         - needs-rebase
         repos:
         - gke-activiti/jx3-cluster-asm
+        - gke-activiti/activiti-cloud-application
         - gke-activiti/nodetest
       target_url: http://lighthouse-jx.34.82.59.208.nip.io/merge/status
 kind: ConfigMap
