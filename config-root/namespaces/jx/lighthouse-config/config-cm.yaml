@@ -8,6 +8,7 @@ data:
     in_repo_config:
       enabled:
         gke-activiti/jx3-cluster-asm: true
+        gke-activiti/nodetest: true
     plank: {}
     pod_namespace: jx
     prowjob_namespace: jx
@@ -20,6 +21,7 @@ data:
         skip-unknown-contexts: false
       merge_method:
         gke-activiti/jx3-cluster-asm: merge
+        gke-activiti/nodetest: merge
       queries:
       - labels:
         - approved
@@ -31,6 +33,7 @@ data:
         - needs-rebase
         repos:
         - gke-activiti/jx3-cluster-asm
+        - gke-activiti/nodetest
       - labels:
         - updatebot
         missingLabels:
@@ -41,6 +44,7 @@ data:
         - needs-rebase
         repos:
         - gke-activiti/jx3-cluster-asm
+        - gke-activiti/nodetest
       target_url: http://lighthouse-jx.34.82.59.208.nip.io/merge/status
 kind: ConfigMap
 metadata:
