@@ -41,7 +41,7 @@ data:
         - needs-rebase
         repos:
         - gke-activiti/jx3-cluster-asm
-      target_url: http://lighthouse-jx./merge/status
+      target_url: http://lighthouse-jx.34.82.59.208.nip.io/merge/status
 kind: ConfigMap
 metadata:
   creationTimestamp: null
