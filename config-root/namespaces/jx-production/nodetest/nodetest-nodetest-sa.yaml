@@ -1,0 +1,10 @@
+# Source: nodetest/templates/sa.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: nodetest-nodetest
+  annotations:
+    meta.helm.sh/release-name: 'nodetest'
+  namespace: jx-production
+  labels:
+    gitops.jenkins-x.io/pipeline: 'namespaces'
