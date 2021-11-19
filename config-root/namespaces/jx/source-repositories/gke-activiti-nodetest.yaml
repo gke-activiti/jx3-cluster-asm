@@ -1,0 +1,22 @@
+apiVersion: jenkins.io/v1
+kind: SourceRepository
+metadata:
+  creationTimestamp: null
+  labels:
+    owner: gke-activiti
+    provider: github
+    repository: nodetest
+    gitops.jenkins-x.io/pipeline: 'namespaces'
+  name: gke-activiti-nodetest
+  namespace: jx
+spec:
+  httpCloneURL: https://github.com/gke-activiti/nodetest.git
+  org: gke-activiti
+  provider: https://github.com
+  providerKind: github
+  providerName: github
+  repo: nodetest
+  scheduler:
+    kind: ""
+    name: in-repo
+  url: https://github.com/gke-activiti/nodetest
