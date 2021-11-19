@@ -8,6 +8,10 @@ data:
       require_self_approval: true
     - lgtm_acts_as_approve: true
       repos:
+      - gke-activiti/activiti-cloud-application
+      require_self_approval: true
+    - lgtm_acts_as_approve: true
+      repos:
       - gke-activiti/nodetest
       require_self_approval: true
     cat: {}
@@ -20,6 +24,11 @@ data:
         env/prow/plugins.yaml:
           name: plugins
     external_plugins:
+      gke-activiti/activiti-cloud-application:
+      - endpoint: http://cd-indicators.jx.svc.cluster.local/lighthouse/events
+        name: cd-indicators
+      - endpoint: http://lighthouse-webui-plugin.jx.svc.cluster.local/lighthouse/events
+        name: lighthouse-webui-plugin
       gke-activiti/jx3-cluster-asm:
       - endpoint: http://cd-indicators.jx.svc.cluster.local/lighthouse/events
         name: cd-indicators
@@ -35,6 +44,22 @@ data:
       additional_labels: null
     owners: {}
     plugins:
+      gke-activiti/activiti-cloud-application:
+      - approve
+      - assign
+      - blunderbuss
+      - help
+      - hold
+      - lgtm
+      - lifecycle
+      - override
+      - size
+      - trigger
+      - wip
+      - heart
+      - cat
+      - dog
+      - pony
       gke-activiti/jx3-cluster-asm:
       - config-updater
       - approve
@@ -79,6 +104,9 @@ data:
     triggers:
     - repos:
       - gke-activiti/jx3-cluster-asm
+      trusted_org: todo
+    - repos:
+      - gke-activiti/activiti-cloud-application
       trusted_org: todo
     - repos:
       - gke-activiti/nodetest
