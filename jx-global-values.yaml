@@ -10,5 +10,3 @@ jx:
   # into the .jx/variables.sh file which can be overriden on a pre repository basis
   # or during a pipeline by writing to the '.jx/variables.sh' file
   pipelineVariables: {}
-  keycloak:
-    url: "http://activiti-keycloak.jx-staging.34.82.59.208/auth"

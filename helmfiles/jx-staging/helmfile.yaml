@@ -8,8 +8,6 @@ repositories:
   url: https://jenkins-x-charts.github.io/repo
 - name: dev
   url: http://chartmuseum-jx.34.82.59.208.nip.io
-- name: activiti-cloud-charts
-  url: https://github.com/Activiti/activiti-cloud-full-chart/tree/master/charts/activiti-cloud-full-example
 releases:
 - chart: jxgh/jx-verify
   name: jx-verify
@@ -19,11 +17,6 @@ releases:
 - chart: dev/nodetest
   version: 0.0.1
   name: nodetest
-  namespace: jx-staging
-  values:
-  - jx-values.yaml
-- chart: charts/activiti-cloud-full-example
-  name: activiti-cloud-full-example
   namespace: jx-staging
   values:
   - jx-values.yaml
